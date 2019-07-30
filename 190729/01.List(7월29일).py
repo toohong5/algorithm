@@ -9,6 +9,7 @@ for k in range(1, 11):
 
     for i in range(2, len(buildings)-2):
         if buildings[i] > buildings[i+1] and buildings[i] >buildings[i+2] and buildings[i] > buildings[i-1] and buildings[i] > buildings[i-2]:
+        # buildings[i] > (buildings[i-2] and buildings[i-1] and buildings[i+1] and buildings[i+2])
             max = 0
             for j in range(5):
                 if j==0:
@@ -17,3 +18,5 @@ for k in range(1, 11):
                     max = buildings[i-2+j]
             sum += buildings[i] - max
     print('#{} {}'.format(k, sum))
+
+    if max < buildings[i]:
