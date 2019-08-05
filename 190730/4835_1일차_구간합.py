@@ -11,7 +11,7 @@ for k in range(1, N+1):
 
     sum_list = []
     sum = 0
-    for i in range(0, n-m+1):
+    for i in range(0, n-m+1): # n-m+1 : 마지막 m개가 남아있는 시작위치(규칙찾기)
         for j in range(0, m):
             sum += numbers[i+j] # 0, 1, 2 이런 순으로 더해감.
         sum_list.append(sum) # sum을 리스트에 추가함
