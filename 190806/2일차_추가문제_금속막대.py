@@ -12,14 +12,22 @@ for i in range(1, N + 1):
         l_list.append([length_list[0], length_list[1]])
         length_list.remove(length_list[0])
         length_list.remove(length_list[0])
-
+    # print(l_list)
+    
     # 기준 : [1]
     N = len(l_list)
     M = len(l_list[0])
-    min_y = 0
+    count_x = 0
+    count_y = 0
+    l_start = 0
+   
     for p in range(N):
         for q in range(M):
-            min_y = min(l_list[p][1])
-    print(min_y)
-    result = []
+            if l_list[p][0] in l_list[p][1]:
+                count_x += 1
+                
+        # if l_list.count(l_list[p][0]) == 1:
+        #     l_start = l_list[p][0]
+
+        # print(l_start)
 
