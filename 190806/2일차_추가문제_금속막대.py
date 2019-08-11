@@ -12,14 +12,29 @@ for i in range(1, N + 1):
         l_list.append([length_list[0], length_list[1]])
         length_list.remove(length_list[0])
         length_list.remove(length_list[0])
-
     # 기준 : [1]
+    
     N = len(l_list)
     M = len(l_list[0])
-    min_y = 0
+    
+    for p in range(N):
+        a = True
+        for q in range(N):
+            if l_list[p][0] == l_list[q][1]:
+                 a = False
+                 break
+        if a:
+            l_list[p], l_list[0] = l_list[0], l_list[p]
+            break
+
+    for p in range(N-1):
+        for q in range(p+1, N):
+            if l_list[p][1] == l_list[q][0]:
+                l_list[p+1], l_list[q] = l_list[q], l_list[p+1]
+    
+    list_str = ''
     for p in range(N):
         for q in range(M):
-            min_y = min(l_list[p][1])
-    print(min_y)
-    result = []
+            list_str += str(l_list[p][q]) + ' '
 
+    print('#{} {}'.format(i, list_str))
