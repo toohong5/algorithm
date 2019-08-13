@@ -16,22 +16,36 @@ for tc in range(1, n+1):
         words_col_list.append(w)
         
     p=''
-
     for row in words_list:        
         for start in range(N - M + 1):  # 시작위치
             end = start + M
-            if row[start:end] == row[start:end:-1]:
+            if row[start:end] == row[start:end][::-1]:
                 p = row[start:end]
                 break
     
     for col in words_col_list:
         for start in range(N - M + 1):  # 시작위치
             end = start + M
-            if col[start:end] == col[start:end:-1]:
+            if col[start:end] == col[start:end][::-1]:
                 p = col[start:end]
                 break
 
     print('#{} {}'.format(tc, p))
+
+#------------ 인덱스 이용------------------
+for tc in range(1, n + 1):
+    N, M = map(int, input().split())
+    words_list = [input() for i in range(arr[0])]
+
+    p = ''
+
+    # 가로
+    for row in range(N):
+        for start in range(N - M + 1):
+            end = start + M - 1
+
+
+    # 세로
 #---------------------------------
 # n = int(input())
 # for k in range(1, n+1):
@@ -104,4 +118,3 @@ for tc in range(1, n+1):
 #         else:
 #             #회문 찾음
 # """              
-        
