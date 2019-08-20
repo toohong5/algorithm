@@ -25,7 +25,7 @@ for tc in range(10):
                     if M not in length_m:
                         length_m.append(M)
             M += 1
-        M  = 1
+        M = 1
         
     for col in col_list:
         while M <= N:
