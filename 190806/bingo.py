@@ -7,10 +7,11 @@ answer = []
 for p in range(5):
     for q in range(5):
         answer.append(ans[p][q])
+print(answer)
 result = 0
-count = 0
-sum_list = []
+# count = 0
 for i in range(len(answer)):
+    sum_list = []
     diag_sum1 = 0
     diag_sum2 = 0
     for r in range(len(bingo)):
@@ -19,6 +20,7 @@ for i in range(len(answer)):
         for c in range(len(bingo[0])):
             if answer[i] == bingo[r][c]:
                 bingo[r][c] = 0
+                # print(answer[i])
                 result += 1
             row_sum += bingo[r][c]
             col_sum += bingo[c][r]
@@ -45,8 +47,8 @@ for i in range(len(answer)):
         sum_list.append(diag_sum2)
         if len(sum_list) == 3:
             break
-    if len(sum_list) == 3:
-        break
+    # if len(sum_list) == 3:
+    #     break
                
 print(result)
 
