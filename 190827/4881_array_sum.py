@@ -47,7 +47,6 @@ def find(n, s):             # n은 순열의 인덱스, s는 생성된 부분까
                 u[i] = 0
             return
 
-
 for tc in range(1, T + 1):
     N = int(input())
     m = [list(map(int, input().split())) for x in range(N)] # 중첩리스트에 숫자 저장
