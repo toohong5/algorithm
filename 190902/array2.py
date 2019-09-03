@@ -5,28 +5,30 @@ def BFS(x, y):
     visit = [[0] * N for _ in range(N)]
     visit[x][y] = 1
     q = deque()
-    q.append((x, y))
-    # size_row = 0
-    # size_column = 0
+    q.append([x, y])
+    size_row = 0
+    size_column = 0
     dx = [0, 1] # 우, 하
     dy = [1, 0]
 
     while q:
-        (x1, y1) = q.popleft()
+        xy = q.popleft()
         for i in range(2):
-            x2 = x1 + dx[i]
-            if 0 <= x2 < N:
-                if not visit[x2][y]:
-                    if arr[x2][y] != 0:
-                        q.append((x2, y))
+            x1 = xy[0] + dx[i]
+            if 0 <= x1 < N:
+                if not visit[x1][xy[0]]:
+                    if arr[x1][xy[0]] != 0:
+                        q.append([x1, xy[0]])
+                        size_row += 1
 
         for i in range(2):
-            y2 = y1 + dy[i]
-            if 0 <= y2 < N:
-                if not visit[x][y1]:
-                    if arr[x][y1] != 0:
-                        q.append((x, y2))
-    print(x1, y1)
+            y1 = xy[1] + dy[i]
+            if 0 <= y1 < N:
+                if not visit[xy[1]][y1]:
+                    if arr[xy[1]][y1] != 0:
+                        q.append([xy[1], y1])
+                        size_column += 1
+
 
 
     #     for i in range(1, N):
