@@ -39,14 +39,8 @@ for tc in range(1, T + 1):
             t_set = set(t_list)
             if len(t_set) != len(t_list):
                 result += 0
-                # print('#{} {}'.format(tc, result2))
-                # break
             else:
                 result += 1
-        # if result2 == 0:
-        #     break
-    # if result2 == 1:
-    #     print('#{} {}'.format(tc, result2))
 
     if result == 27:
         r = 1
