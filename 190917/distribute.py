@@ -17,8 +17,8 @@ def perm(per, row):
 
 T = int(input())
 for tc in range(1, T + 1):
-    visit = [0] * 17
     N = int(input())
+    visit = [0] * 17
     arr = [list(map(int, input().split())) for _ in range(N)]
     maximum = 0
     for i in range(N):

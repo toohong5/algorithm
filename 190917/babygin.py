@@ -42,8 +42,10 @@ for tc in range(1, T + 1):
         result = 1
     if result2 == 2 and result1 == 0:
         result = 2
-    print(S1)
-    print(S2)
+    if result1 == 2 and result1 == 1:
+        result = 0
+    # print(S1)
+    # print(S2)
     print('#{} {}'.format(tc, result))
     # for i in range(6):
     #     if i == 3:
