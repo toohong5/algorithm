@@ -1,9 +1,10 @@
 import sys
 sys.stdin = open('cart.txt', 'r')
-
+# 순열구하기...
+# 
 def perm(sum1, row, count):
     global mini
-    if sum1 > mini:
+    if sum1 > mini: # MINI보다 크면 끊는다!
         return
     if count == N:
         mini = min(mini, sum1)

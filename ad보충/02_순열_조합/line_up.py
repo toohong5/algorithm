@@ -12,10 +12,11 @@ for tc in range(T):
     maxi = 0
     def perm(sum1, row):
         global maxi
-        if sum1 < maxi:
-            return
+        # if sum1 < maxi:
+        #     return
         if row == 11 and sum1>=maxi:
             maxi = sum1
+            sum_list.append(maxi)
             return
         for i in range(11):
             if not visit[i]:
@@ -24,4 +25,5 @@ for tc in range(T):
                     perm(sum1 + arr[row][i], row + 1)
                     visit[i] = 0
     perm(0, 0)
-    print(maxi)
+    print(sum_list)
+    # print(maxi)
