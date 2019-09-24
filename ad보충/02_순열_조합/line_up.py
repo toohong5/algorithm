@@ -6,14 +6,12 @@ T = int(input())
 for tc in range(T):
     arr =  [list(map(int, input().split())) for _ in range(11)]
     visit = [0] * 11
-    # pprint(arr)
+
     sum_list = []
     choose = []
     maxi = 0
     def perm(sum1, row):
         global maxi
-        # if sum1 < maxi:
-        #     return
         if row == 11 and sum1>=maxi:
             maxi = sum1
             sum_list.append(maxi)
@@ -25,5 +23,4 @@ for tc in range(T):
                     perm(sum1 + arr[row][i], row + 1)
                     visit[i] = 0
     perm(0, 0)
-    print(sum_list)
-    # print(maxi)
+    print(max(sum_list))

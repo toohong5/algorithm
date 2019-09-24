@@ -3,9 +3,12 @@ sys.stdin = open('n_m9.txt', 'r')
 
 def perm(k, n):
     if k == n:
+        # print(choose)
         a = choose[::]
         if a not in choose_list:
             choose_list.append(a)
+            # print(choose_list)
+            print(*a)
         return
     for i in range(N):
         if not visit[i]:
@@ -23,5 +26,4 @@ choose_list = []
 choose = []
 
 perm(0, M)
-for c in choose_list:
-    print(*c)
+# print(choose_list)
