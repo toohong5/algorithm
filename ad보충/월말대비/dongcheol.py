@@ -3,15 +3,13 @@ sys.stdin = open('dongcheol.txt', 'r')
 
 def perm(per, row):
     global max_percent
-    if per * 100 < max_percent:
-        return
-    if row == N - 1 and per * 100 > max_percent:
-        max_percent = per * 100
+    if row == N:
+        max_percent = max(per * 100, max_percent)
         return
     for i in range(N):
         if not visit[i]:
             visit[i] = 1
-            perm(per * arr[i][j], row + 1)
+            perm(per * arr[row][i], row + 1)
             visit[i] = 0
 
 T = int(input())
@@ -24,4 +22,4 @@ for tc in range(1, T + 1):
             arr[i][j] = arr[i][j] / 100
     max_percent = 0
     perm(1.0, 0)
-    print(max_percent)
+    print('%.6f'%(max_percent))

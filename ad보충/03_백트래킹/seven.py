@@ -6,6 +6,8 @@ def DFS(x, y, count):
     if count == 7:
         result += 1
         return
+
+def comb(k, s):
     
 
 arr = [list(input()) for _ in range(5)]
