@@ -4,8 +4,8 @@ sys.setrecursionlimit(10**6)
 
 def find(x, count):
     global min_count
-    # if x < 0 or x > 100000:
-    #     return
+    if x < 0 or x > 100000:
+        return
     if x == k:
         min_count = min(min_count, count)
         return
@@ -19,9 +19,9 @@ def find(x, count):
 
         if 0<= x1 < 100000:
             find(x1, count + 1)
-        else:
+        # else:
             
-            return
+        #     return
 
     # find(idx - 1, count + 1)
     # find(idx + 1, count + 1)
