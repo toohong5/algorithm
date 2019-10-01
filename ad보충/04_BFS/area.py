@@ -3,6 +3,20 @@ sys.stdin = open('area.txt', 'r')
 from pprint import pprint
 from collections import deque
 
+def DFS(x, y):
+    global count
+    visit[x][y] = 1
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
+    for i in range(4):
+        x1 = x + dx[i]
+        y1 = y + dy[i]
+        if 0 <= x1 < N and 0 <= y1 < M:
+            if not visit[x1][y1]:
+                if arr[x1][y1] == 0:
+                    count += 1
+                    DFS(x1, y1)
+
 def BFS(x, y):
     global count
     q = deque()
@@ -15,7 +29,7 @@ def BFS(x, y):
         for i in range(4):
             x1 = x + dx[i]
             y1 = y + dy[i]
-            if 0 <= x1 < N and 0 <= y1 < N:
+            if 0 <= x1 < N and 0 <= y1 < M:
                 if not visit[x1][y1]:
                     if arr[x1][y1] == 0:
                         visit[x1][y1] = 1
@@ -26,7 +40,7 @@ N, M, K = map(int, input().split())
 
 arr = [[0] * M for _ in range(N)]
 visit = [[0] * M for _ in range(N)]
-# pprint(arr)
+
 for _ in range(K):
     x1, y1, x2, y2 = map(int, input().split())
     for i in range(x1, x2):
@@ -44,4 +58,5 @@ for i in range(N):
                 count_list.append(count)
                 count = 1
 count_list.sort()
+print(result)
 print(*count_list)
