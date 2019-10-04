@@ -43,6 +43,3 @@ for tc in range(1, T + 1):
             maximum2 = max(i)
     
     print('#{} {}'.format(tc, maximum + maximum2))
-    
-
-    # print('#{} {}'.format(tc, result[0] + result[1]))
