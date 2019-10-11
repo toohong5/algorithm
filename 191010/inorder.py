@@ -25,3 +25,49 @@ for tc in range(1, 11):
     print('#{}'.format(tc), end=' ')
     inorder(1)
     print()
+
+
+
+
+            if tree[i//2] > arr[index]:
+                if tree[i] == 0:
+                    tree[i] = tree[i//2]
+                    tree[i//2] = arr[index]
+                    i += 1
+                    index += 1
+                else:
+                    tree[i + 1] = arr[index]
+                    i *= 2
+                    index += 1
+            else:
+                if tree[i] == 0:
+                    tree[i] = arr[index]
+                    i += 1
+                    index += 1
+                else:
+                    tree[i + 1] = arr[index]
+                    i *= 2
+                    index += 1
+
+j = i
+            while j != 0:
+                if tree[j//2] > arr[index]:
+                    if tree[j] == 0:
+                        tree[j] = tree[j//2]
+                        tree[j//2] = arr[index]
+                        i += 1
+                        index += 1
+                    else:
+                        tree[j + 1] = arr[index]
+                        i *= 2
+                        index += 1
+                else:
+                    if tree[j] == 0:
+                        tree[j] = arr[index]
+                        i += 1
+                        index += 1
+                    else:
+                        tree[j + 1] = arr[index]
+                        i *= 2
+                        index += 1
+                j = j // 2
