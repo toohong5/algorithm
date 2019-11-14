@@ -2,6 +2,9 @@ import sys
 sys.stdin = open('hide_seek.txt', 'r')
 sys.setrecursionlimit(10**6)
 
+def bfs(x, count):
+    
+
 def find(x, count):
     global min_count
     if x < 0 or x > 100000:
